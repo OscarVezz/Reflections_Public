@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2yk06ro2yhh8"]
+
+[ext_resource type="Script" path="res://scripts/beheaviours/_floor_beheaviour.gd" id="2_iadi4"]
+[ext_resource type="Script" path="res://scripts/beheaviours/_camera_beheaviour.gd" id="2_t4gen"]
+[ext_resource type="Material" uid="uid://8w7trhm43yc0" path="res://art/materials/glass/glass_material.tres" id="3_d73yq"]
+[ext_resource type="PackedScene" uid="uid://c8bj33xcmgdwu" path="res://scenes/experimental/1.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://usqbxf28qsoe" path="res://scenes/props/explosion_reflective.tscn" id="5_m77ds"]
+
+[sub_resource type="ViewportTexture" id="41"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Sky" id="34"]
+
+[sub_resource type="Environment" id="40"]
+background_mode = 3
+background_color = Color(0.737255, 1, 0.992157, 1)
+sky = SubResource("34")
+ambient_light_source = 2
+ambient_light_color = Color(0.901961, 0.952941, 0.968627, 1)
+ambient_light_sky_contribution = 0.23
+ambient_light_energy = 1.5
+glow_intensity = 1.2
+glow_bloom = 0.09
+glow_blend_mode = 1
+fog_enabled = true
+fog_light_energy = 1.77
+volumetric_fog_length = 6.4
+adjustment_enabled = true
+adjustment_brightness = 0.77
+adjustment_contrast = 1.68
+adjustment_saturation = 1.15
+
+[sub_resource type="PlaneMesh" id="9"]
+size = Vector2(1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(1280, 720)
+
+[node name="MirrorWorld" parent="SubViewport" instance=ExtResource("4")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("41")
+expand_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("40")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.984808, 0.155324, -0.0776413, 0, 0.447119, 0.894474, 0.173648, -0.880885, 0.440326, 0, 12.5702, 7.2026)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.649633, 0.760247, 0, -0.760247, 0.649633, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 17.198)
+v_offset = 1.0
+fov = 61.4
+size = 18.292
+script = ExtResource("2_t4gen")
+
+[node name="Props" type="Marker3D" parent="." node_paths=PackedStringArray("_mirrors", "_explosion_prop")]
+process_mode = 1
+script = ExtResource("2_iadi4")
+_mirrors = [NodePath("Mesh1"), NodePath("Mesh2"), NodePath("Mesh3")]
+_explosion_prop = NodePath("explosion")
+
+[node name="Mesh1" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(-3.49691e-07, 1, -2.62268e-07, 0, -4.37114e-08, -6, -8, -4.37114e-08, 1.14641e-14, -4, 3, 0)
+mesh = SubResource("9")
+surface_material_override/0 = ExtResource("3_d73yq")
+
+[node name="Mesh2" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(8, -1.91068e-15, 0, 0, -4.37114e-08, -6, 2.84217e-14, 1, -2.62268e-07, -2.38419e-07, 3, -4)
+mesh = SubResource("9")
+surface_material_override/0 = ExtResource("3_d73yq")
+
+[node name="Mesh3" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(-3.49691e-07, -1, 2.62268e-07, 0, -4.37114e-08, -6, 8, -4.37114e-08, 1.14641e-14, 4, 3, 0)
+mesh = SubResource("9")
+surface_material_override/0 = ExtResource("3_d73yq")
+
+[node name="explosion" parent="Props" instance=ExtResource("5_m77ds")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, -33)
+visible = false

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0ni6mkys15sn"]
+
+[ext_resource type="Material" uid="uid://xqtllkhwvdq4" path="res://art/materials/tiles/.tres" id="1"]
+[ext_resource type="Script" path="res://scripts/beheaviours/_floor_beheaviour.gd" id="2"]
+
+[sub_resource type="PlaneMesh" id="18"]
+size = Vector2(1, 1)
+
+[node name="Floor" type="MeshInstance3D"]
+mesh = SubResource("18")
+surface_material_override/0 = ExtResource("1")
+script = ExtResource("2")

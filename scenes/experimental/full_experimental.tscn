@@ -1,0 +1,1142 @@
+[gd_scene load_steps=67 format=3 uid="uid://dhkrisw838n53"]
+
+[ext_resource type="Script" path="res://scripts/managers/_game_manager.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://xb1j4tydxv4t" path="res://scenes/rolling_cubes/rolling_cube_base.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://0yx0in5uw6kr" path="res://scenes/managers/tempo_manager.tscn" id="4"]
+[ext_resource type="Theme" uid="uid://ddo6s065mfd1j" path="res://ui/themes/pause_theme.tres" id="4_biy44"]
+[ext_resource type="Shader" path="res://art/shaders/greenscreen.gdshader" id="4_jj7fs"]
+[ext_resource type="Texture2D" uid="uid://bhug3kllmf6m3" path="res://ui/icons/keyboard_return.png" id="4_vupdh"]
+[ext_resource type="PackedScene" path="res://scenes/canvas/fps_counter.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://d1x4x2eiv2iia" path="res://ui/icons/keyboard_return_outline.png" id="5_mlq4c"]
+[ext_resource type="PackedScene" uid="uid://c2yk06ro2yhh8" path="res://scenes/experimental/2.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://ehqc52t6qsie" path="res://art/textures/noise/noise_2.tres" id="6_nly7g"]
+[ext_resource type="Texture2D" uid="uid://ctvtl7t1lnhdo" path="res://ui/icons/keyboard_w.png" id="7_726rf"]
+[ext_resource type="Shader" path="res://art/shaders/experimental.gdshader" id="8"]
+[ext_resource type="Texture2D" uid="uid://bm4ptrgh6tcu7" path="res://ui/icons/keyboard_a.png" id="8_686v7"]
+[ext_resource type="Texture2D" uid="uid://q7eavhfcqhgq" path="res://ui/icons/keyboard_w_outline.png" id="8_sp8qj"]
+[ext_resource type="Script" path="res://scripts/beheaviours/_floor_beheaviour.gd" id="9_qq1ln"]
+[ext_resource type="Texture2D" uid="uid://calfy8ii666lx" path="res://ui/icons/keyboard_s.png" id="9_wrodp"]
+[ext_resource type="Material" uid="uid://xqtllkhwvdq4" path="res://art/materials/tiles/.tres" id="10_2dj04"]
+[ext_resource type="Texture2D" uid="uid://5pvlva1ufud" path="res://ui/icons/keyboard_a_outline.png" id="10_doo1s"]
+[ext_resource type="Texture2D" uid="uid://cin1scju5voq8" path="res://ui/icons/keyboard_d.png" id="10_fs0dq"]
+[ext_resource type="Texture2D" uid="uid://cwqf2a0e260de" path="res://art/textures/noise/noise_1.tres" id="11"]
+[ext_resource type="PackedScene" uid="uid://ybjpkn7ejbus" path="res://scenes/rolling_cubes/big_area.tscn" id="11_dpdt3"]
+[ext_resource type="Texture2D" uid="uid://du4tgfkcc756b" path="res://ui/icons/keyboard_s_outline.png" id="12_4ilib"]
+[ext_resource type="Material" uid="uid://l612yg7n76r2" path="res://art/materials/basics/blue.tres" id="12_51fc7"]
+[ext_resource type="Script" path="res://scripts/beheaviours/_camera_beheaviour.gd" id="12_gagpm"]
+[ext_resource type="Texture2D" uid="uid://lc1ci15ym40v" path="res://ui/icons/keyboard_d_outline.png" id="14_k7ysi"]
+[ext_resource type="Texture2D" uid="uid://dxhi33dqyaerj" path="res://ui/icons/keyboard_arrow_up.png" id="15_01hrj"]
+[ext_resource type="Shader" path="res://art/shaders/frontground.gdshader" id="16_a2v8x"]
+[ext_resource type="Texture2D" uid="uid://b8poijv7ffymm" path="res://ui/icons/keyboard_arrow_up_outline.png" id="16_gs3o8"]
+[ext_resource type="Script" path="res://scripts/managers/_player_manager.gd" id="17"]
+[ext_resource type="Texture2D" uid="uid://tpt4ckj25qi3" path="res://ui/icons/keyboard_arrow_left.png" id="17_e65qj"]
+[ext_resource type="PackedScene" uid="uid://c424y7m77bod4" path="res://scenes/props/explosion.tscn" id="17_obshp"]
+[ext_resource type="Script" path="res://scripts/managers/_spawner_manager.gd" id="18"]
+[ext_resource type="Texture2D" uid="uid://cnfwey37vs0fu" path="res://ui/icons/keyboard_arrow_left_outline.png" id="18_m332p"]
+[ext_resource type="Texture2D" uid="uid://bkylg8ag1g3ik" path="res://ui/icons/generic_button_square.png" id="19_xfc85"]
+[ext_resource type="PackedScene" uid="uid://cqceyp5xun5vc" path="res://scenes/rolling_cubes/rolling_area.tscn" id="20"]
+[ext_resource type="Texture2D" uid="uid://dvj57deiw584s" path="res://ui/icons/generic_button_square_outline.png" id="20_7dis6"]
+[ext_resource type="PackedScene" uid="uid://jybfejqc6g2d" path="res://scenes/boss/boss.tscn" id="21"]
+[ext_resource type="Texture2D" uid="uid://c5y6i6gkp1cx5" path="res://ui/icons/keyboard_arrow_right.png" id="21_b3g0j"]
+[ext_resource type="Texture2D" uid="uid://btfq4dvwe7wwa" path="res://ui/icons/keyboard_arrow_right_outline.png" id="22_cklun"]
+[ext_resource type="Texture2D" uid="uid://b2owrh4oxrf5j" path="res://ui/icons/keyboard_escape.png" id="23_rf3e6"]
+[ext_resource type="Texture2D" uid="uid://dl2a1akeseyob" path="res://ui/icons/keyboard_escape_outline.png" id="24_hi2nj"]
+[ext_resource type="Texture2D" uid="uid://dlfijlxe2q1bh" path="res://ui/icons/keyboard_r.png" id="25_wmiku"]
+[ext_resource type="Texture2D" uid="uid://dijdvb7gavk32" path="res://ui/icons/keyboard_r_outline.png" id="26_8l7pg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1cor"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tmnn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Gradient" id="10"]
+offsets = PackedFloat32Array(0, 0.191257, 1)
+colors = PackedColorArray(0.6992, 0.73264, 0.76, 1, 0.6461, 0.662075, 0.71, 1, 0.4, 0.4, 0.4, 1)
+
+[sub_resource type="GradientTexture2D" id="11"]
+gradient = SubResource("10")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_638hj"]
+shader = ExtResource("4_jj7fs")
+shader_parameter/scroll1 = Vector2(-0.015, -0.005)
+shader_parameter/scroll2 = Vector2(0.02, 0.011)
+shader_parameter/texture2 = ExtResource("6_nly7g")
+shader_parameter/colorTexture = SubResource("11")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mivkl"]
+shader = ExtResource("8")
+
+[sub_resource type="ViewportTexture" id="39"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Sky" id="34"]
+
+[sub_resource type="Environment" id="4"]
+background_mode = 3
+background_color = Color(0.737255, 1, 0.992157, 1)
+sky = SubResource("34")
+ambient_light_source = 2
+ambient_light_color = Color(0.839216, 0.917647, 0.980392, 1)
+ambient_light_sky_contribution = 0.23
+tonemap_mode = 2
+tonemap_white = 16.0
+ssao_enabled = true
+ssao_radius = 1.35
+ssao_intensity = 4.0
+glow_enabled = true
+glow_intensity = 2.0
+glow_blend_mode = 1
+glow_hdr_threshold = 1.26
+fog_enabled = true
+adjustment_enabled = true
+adjustment_contrast = 1.68
+adjustment_saturation = 1.15
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c4duo"]
+size = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aclrl"]
+render_priority = 2
+shader = ExtResource("16_a2v8x")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fgbj3"]
+size = Vector2(1, 1)
+
+[sub_resource type="BoxMesh" id="20"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="PlaneMesh" id="9"]
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="35"]
+
+[sub_resource type="BoxShape3D" id="33"]
+
+[sub_resource type="Gradient" id="Gradient_eepei"]
+offsets = PackedFloat32Array(0.364017, 0.8159)
+colors = PackedColorArray(0.95, 0.1235, 0.1235, 1, 0, 0, 0, 0.254902)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3kdpl"]
+gradient = SubResource("Gradient_eepei")
+
+[sub_resource type="Curve" id="Curve_wnjen"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.92575, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2uaye"]
+curve = SubResource("Curve_wnjen")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4avlj"]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_max = 7.6
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 11.0
+initial_velocity_max = 13.0
+gravity = Vector3(0, 0, 0)
+linear_accel_max = 2.0
+radial_accel_min = 6.0
+radial_accel_max = 10.0
+tangential_accel_min = 9.52
+tangential_accel_max = 12.24
+damping_min = 20.0
+damping_max = 22.0
+scale_max = 1.4
+scale_curve = SubResource("CurveTexture_2uaye")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_3kdpl")
+turbulence_noise_strength = 0.65
+turbulence_noise_scale = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0ecn"]
+transparency = 1
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 0.235294, 0.113725, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_cjsbd"]
+material = SubResource("StandardMaterial3D_i0ecn")
+size = Vector3(0.4, 0.1, 0.4)
+
+[node name="Main" type="Node" node_paths=PackedStringArray("tutorial_canvas", "progress_bars", "disclaimer_label")]
+process_mode = 3
+script = ExtResource("2")
+tutorial_canvas = [NodePath("UI/Tutorial/Movement"), NodePath("UI/Tutorial/Attack"), NodePath("UI/Tutorial/Specs"), NodePath("UI/Tutorial/Pause"), NodePath("UI/Tutorial/End")]
+progress_bars = [NodePath("UI/Tutorial/Movement/MovementProgressBar"), NodePath("UI/Tutorial/Attack/AttackProgressBar"), NodePath("UI/Tutorial/Specs/SpecsProgressBar"), NodePath("UI/Tutorial/Pause/PauseProgressBar")]
+disclaimer_label = NodePath("UI/Disclaimer/Panel/VBoxContainer2/Panel/Label")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+process_mode = 1
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 3
+
+[node name="Node3D" parent="SubViewport" instance=ExtResource("6")]
+process_mode = 1
+
+[node name="UI" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FPSCounter" type="CanvasLayer" parent="UI"]
+layer = 7
+
+[node name="FPS_counter" parent="UI/FPSCounter" instance=ExtResource("5")]
+offset_right = 31.0
+offset_bottom = 25.0
+
+[node name="StartMenu" type="CanvasLayer" parent="UI"]
+layer = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StartMenu"]
+custom_minimum_size = Vector2(100, 200)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -205.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/StartMenu/VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_vupdh")
+
+[node name="TextureRect" type="TextureRect" parent="UI/StartMenu/VBoxContainer/TextureRect"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_mlq4c")
+
+[node name="Panel" type="Panel" parent="UI/StartMenu/VBoxContainer"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1cor")
+
+[node name="Label" type="Label" parent="UI/StartMenu/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 19
+text = "Press ENTER
+to start the game"
+horizontal_alignment = 1
+
+[node name="TutorialStart" type="Button" parent="UI/StartMenu"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -60.0
+offset_right = 249.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 22
+text = "Quick Tutorial"
+
+[node name="Tutorial" type="CanvasLayer" parent="UI"]
+process_mode = 1
+layer = 5
+visible = false
+
+[node name="Movement" type="VBoxContainer" parent="UI/Tutorial"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -250.0
+offset_right = 204.0
+offset_bottom = -34.0
+grow_vertical = 0
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="UI/Tutorial/Movement"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = -8
+theme_override_constants/v_separation = -10
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer"]
+layout_mode = 2
+texture = ExtResource("7_726rf")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer/TextureRect"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_sp8qj")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_686v7")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer/TextureRect2"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_doo1s")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer"]
+layout_mode = 2
+texture = ExtResource("9_wrodp")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer/TextureRect3"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_4ilib")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer"]
+layout_mode = 2
+texture = ExtResource("10_fs0dq")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Movement/GridContainer/TextureRect4"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("14_k7ysi")
+
+[node name="Panel" type="Panel" parent="UI/Tutorial/Movement"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1cor")
+
+[node name="Label" type="Label" parent="UI/Tutorial/Movement/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 19
+text = "Use WASD 
+to Move"
+horizontal_alignment = 1
+
+[node name="MovementProgressBar" type="ProgressBar" parent="UI/Tutorial/Movement"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme = ExtResource("4_biy44")
+max_value = 1.0
+show_percentage = false
+
+[node name="Attack" type="VBoxContainer" parent="UI/Tutorial"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -250.0
+offset_right = -24.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="UI/Tutorial/Attack"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = -8
+theme_override_constants/v_separation = -10
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer"]
+layout_mode = 2
+texture = ExtResource("15_01hrj")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer/TextureRect"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_gs3o8")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer"]
+layout_mode = 2
+texture = ExtResource("17_e65qj")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer/TextureRect2"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("18_m332p")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer"]
+layout_mode = 2
+texture = ExtResource("19_xfc85")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer/TextureRect7"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_7dis6")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer"]
+layout_mode = 2
+texture = ExtResource("21_b3g0j")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Attack/GridContainer/TextureRect4"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("22_cklun")
+
+[node name="Panel" type="Panel" parent="UI/Tutorial/Attack"]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1cor")
+
+[node name="Label" type="Label" parent="UI/Tutorial/Attack/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 19
+text = "Use the Arrow Keys 
+to destroy the mirrors"
+horizontal_alignment = 1
+
+[node name="AttackProgressBar" type="ProgressBar" parent="UI/Tutorial/Attack"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme = ExtResource("4_biy44")
+max_value = 1.0
+show_percentage = false
+
+[node name="Specs" type="VBoxContainer" parent="UI/Tutorial"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -260.0
+offset_right = -24.0
+offset_bottom = -23.999
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="UI/Tutorial/Specs"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = -8
+theme_override_constants/v_separation = -10
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer"]
+layout_mode = 2
+texture = ExtResource("15_01hrj")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer/TextureRect"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_gs3o8")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer"]
+layout_mode = 2
+texture = ExtResource("17_e65qj")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer/TextureRect2"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("18_m332p")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer"]
+layout_mode = 2
+texture = ExtResource("19_xfc85")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer/TextureRect7"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_7dis6")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer"]
+layout_mode = 2
+texture = ExtResource("21_b3g0j")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Specs/GridContainer/TextureRect4"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("22_cklun")
+
+[node name="Panel" type="Panel" parent="UI/Tutorial/Specs"]
+custom_minimum_size = Vector2(220, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1cor")
+
+[node name="Label" type="Label" parent="UI/Tutorial/Specs/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 19
+text = "This will destroy 
+EVERYTHING* 
+behind the mirror"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpecsProgressBar" type="ProgressBar" parent="UI/Tutorial/Specs"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme = ExtResource("4_biy44")
+max_value = 1.0
+show_percentage = false
+
+[node name="Pause" type="VBoxContainer" parent="UI/Tutorial"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -250.0
+offset_right = 204.0
+offset_bottom = -34.0
+grow_vertical = 0
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Tutorial/Pause"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Pause/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("23_rf3e6")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Pause/HBoxContainer/TextureRect"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("24_hi2nj")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Tutorial/Pause/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("25_wmiku")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/Pause/HBoxContainer/TextureRect2"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("26_8l7pg")
+
+[node name="Panel" type="Panel" parent="UI/Tutorial/Pause"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1cor")
+
+[node name="Label" type="Label" parent="UI/Tutorial/Pause/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 19
+text = "Use ESC to Pause 
+and R to Restart"
+horizontal_alignment = 1
+
+[node name="PauseProgressBar" type="ProgressBar" parent="UI/Tutorial/Pause"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme = ExtResource("4_biy44")
+max_value = 1.0
+show_percentage = false
+
+[node name="End" type="VBoxContainer" parent="UI/Tutorial"]
+visible = false
+custom_minimum_size = Vector2(100, 200)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -205.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/End"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_vupdh")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Tutorial/End/TextureRect"]
+modulate = Color(0.0745098, 0.129412, 0.258824, 1)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_mlq4c")
+
+[node name="Panel" type="Panel" parent="UI/Tutorial/End"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1cor")
+
+[node name="Label" type="Label" parent="UI/Tutorial/End/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 19
+text = "Press ENTER
+to start the game"
+horizontal_alignment = 1
+
+[node name="Disclaimer" type="CanvasLayer" parent="UI"]
+layer = 5
+visible = false
+
+[node name="Panel" type="Panel" parent="UI/Disclaimer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -248.78
+offset_right = 320.0
+offset_bottom = -168.78
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/Disclaimer/Panel"]
+custom_minimum_size = Vector2(480, 60)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Panel" type="Panel" parent="UI/Disclaimer/Panel/VBoxContainer2"]
+custom_minimum_size = Vector2(600, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_biy44")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5tmnn")
+
+[node name="Label" type="Label" parent="UI/Disclaimer/Panel/VBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 30
+text = "Well done! You have been hit 0 times!"
+horizontal_alignment = 1
+
+[node name="PauseMenu" type="CanvasLayer" parent="UI"]
+layer = 4
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="Panel" type="Panel" parent="UI/PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -140.0
+offset_right = 240.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 9
+alignment = 1
+
+[node name="Continue" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_biy44")
+text = "Continue"
+
+[node name="Restart" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_biy44")
+text = "Restart"
+
+[node name="Exit" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_biy44")
+text = "Exit
+"
+
+[node name="HSeparator" type="HSeparator" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_biy44")
+theme_override_constants/separation = 10
+
+[node name="Quit" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_biy44")
+text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/PauseMenu/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_biy44")
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Panel" type="Panel" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 26.45)
+layout_mode = 2
+theme = ExtResource("4_biy44")
+
+[node name="Label" type="Label" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 19
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="Panel2" type="Panel" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 26.45)
+layout_mode = 2
+theme = ExtResource("4_biy44")
+
+[node name="Label2" type="Label" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -13.5
+offset_right = 100.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 19
+text = "Sound Effects"
+horizontal_alignment = 1
+
+[node name="EffectsSlider" type="HSlider" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+max_value = 0.5
+step = 0.001
+value = 0.25
+
+[node name="HSeparator2" type="HSeparator" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_biy44")
+theme_override_constants/separation = 20
+
+[node name="FPS_Button" type="CheckButton" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 16
+button_pressed = true
+text = " Show FPS "
+
+[node name="Practice_Button" type="CheckButton" parent="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_biy44")
+theme_override_font_sizes/font_size = 16
+text = " Practice Mode"
+
+[node name="Flash" type="CanvasLayer" parent="UI"]
+layer = 3
+
+[node name="Flash" type="ColorRect" parent="UI/Flash"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Experimento" type="CanvasLayer" parent="UI"]
+layer = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Experimento"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_638hj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset = Vector2(640, 360)
+texture = ExtResource("11")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MirrorLayer" type="CanvasLayer" parent="UI"]
+
+[node name="TextureRect" type="TextureRect" parent="UI/MirrorLayer"]
+material = SubResource("ShaderMaterial_mivkl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("39")
+expand_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.984808, 0.155324, -0.0776413, 0, 0.447119, 0.894474, 0.173648, -0.880885, 0.440326, 0, 12.5702, 7.2026)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="TempoManager" parent="." instance=ExtResource("4")]
+process_mode = 1
+debug_bar = 39
+debug_beat = 1
+beats_per_minute = 125.0
+main_offset = 23.04
+
+[node name="PlayerManager" type="Node" parent="." node_paths=PackedStringArray("_player", "_hurt_particles")]
+process_mode = 1
+script = ExtResource("17")
+_player = NodePath("../Player")
+_hurt_particles = NodePath("../GPUParticles3D")
+_colors = Array[Color]([Color(1, 0, 0, 1), Color(0.478431, 0, 0, 1), Color(0.278431, 0, 0, 1)])
+
+[node name="SpawnerManager" type="Node" parent="."]
+process_mode = 1
+script = ExtResource("18")
+enemy_scenes = Array[PackedScene]([ExtResource("20"), ExtResource("11_dpdt3")])
+
+[node name="Depth_Identifier" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.14051, 0, 0, 0, 5.37763, -4.69767, 0, 4.69767, 5.37763, 0, 13.106, 9.945)
+mesh = SubResource("PlaneMesh_c4duo")
+surface_material_override/0 = SubResource("ShaderMaterial_aclrl")
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 0.649633, 0.760247, 0, -0.760247, 0.649633, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" node_paths=PackedStringArray("extra")]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 17.198)
+v_offset = 1.0
+fov = 61.4
+size = 18.292
+script = ExtResource("12_gagpm")
+extra = NodePath("../../UI/Experimento/TextureRect")
+
+[node name="Props" type="Marker3D" parent="." node_paths=PackedStringArray("_mirrors", "_floor", "_mirror_front", "_explosion_prop")]
+process_mode = 1
+script = ExtResource("9_qq1ln")
+_is_unique = true
+_mirrors = [NodePath("Mirror1"), NodePath("Mirror2"), NodePath("Mirror3")]
+_floor = NodePath("Floor")
+_mirror_front = NodePath("Mirror4")
+_explosion_prop = NodePath("explosion")
+
+[node name="Floor" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0)
+mesh = SubResource("PlaneMesh_fgbj3")
+surface_material_override/0 = ExtResource("10_2dj04")
+
+[node name="Base" type="MeshInstance3D" parent="Props/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01, 0)
+mesh = SubResource("20")
+
+[node name="Mirror1" type="CharacterBody3D" parent="Props"]
+transform = Transform3D(-3.49691e-07, 1, -2.62268e-07, 0, -4.37114e-08, -6, -8, -4.37114e-08, 1.14641e-14, -4, 3, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Mirror1"]
+transform = Transform3D(1, -4.44089e-16, 1.05879e-22, 2.84217e-14, 1, -5.01112e-22, 2.11758e-22, -1.39198e-23, 1, 0, 0, 0)
+mesh = SubResource("9")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_51fc7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Mirror1"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.39198e-23, 0, -1.39198e-23, 1, 0, -0.5, 0)
+shape = SubResource("35")
+
+[node name="Mirror2" type="CharacterBody3D" parent="Props"]
+transform = Transform3D(8, 0, 0, 0, -4.37114e-08, -6, 0, 1, -2.62268e-07, 0, 3, -4)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Mirror2"]
+mesh = SubResource("9")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_51fc7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Mirror2"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.01112e-22, 0, -1.39198e-23, 1, 0, -0.5, 0)
+shape = SubResource("35")
+
+[node name="Mirror3" type="CharacterBody3D" parent="Props"]
+transform = Transform3D(-3.49691e-07, -1, 2.62268e-07, 0, -4.37114e-08, -6, 8, -4.37114e-08, 1.14641e-14, 4, 3, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Mirror3"]
+mesh = SubResource("9")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_51fc7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Mirror3"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.01112e-22, 0, -1.39198e-23, 1, 0, -0.5, 0)
+shape = SubResource("35")
+
+[node name="Mirror4" type="CharacterBody3D" parent="Props"]
+transform = Transform3D(8, 0, 0, 0, -4.37114e-08, 6, 0, -1, -2.62268e-07, 0, 3, 4)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Mirror4"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.01112e-22, 0, -1.39198e-23, 1, 0, -0.5, 0)
+shape = SubResource("33")
+
+[node name="explosion" parent="Props" instance=ExtResource("17_obshp")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, -33)
+visible = false
+
+[node name="Clones" type="Marker3D" parent="."]
+process_mode = 1
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+collision_mask = 14
+limit_movement = true
+
+[node name="Boss" parent="." instance=ExtResource("21")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.389199, 0.5)
+emitting = false
+amount = 124
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_4avlj")
+draw_pass_1 = SubResource("BoxMesh_cjsbd")
+
+[connection signal="pressed" from="UI/StartMenu/TutorialStart" to="." method="_on_tutorial_start_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2/EffectsSlider" to="." method="_on_effects_slider_value_changed"]
+[connection signal="toggled" from="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2/FPS_Button" to="." method="_on_fps_button_toggled"]
+[connection signal="toggled" from="UI/PauseMenu/Panel/HBoxContainer/VBoxContainer2/Practice_Button" to="." method="_on_practice_button_toggled"]

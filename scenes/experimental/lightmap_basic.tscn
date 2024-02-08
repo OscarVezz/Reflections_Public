@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="LightmapGI" type="LightmapGI"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.07906, 0 )
+extents = Vector3( 11.699, 8, 8 )
+quality = 2
+bounces = 4
+use_hdr = false
+environment_mode = 1

@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://c8bj33xcmgdwu"]
+
+[ext_resource type="PackedScene" uid="uid://cqceyp5xun5vc" path="res://scenes/rolling_cubes/rolling_area.tscn" id="1"]
+[ext_resource type="Material" uid="uid://cl6fbox34rhwm" path="res://art/materials/background/background_material.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://cwqf2a0e260de" path="res://art/textures/noise/noise_1.tres" id="3_3p2pp"]
+[ext_resource type="Texture2D" uid="uid://cbk3jfqxkb3m1" path="res://art/textures/backgrounds/screenshot.png" id="4"]
+[ext_resource type="Script" path="res://scripts/beheaviours/_camera_beheaviour.gd" id="4_abh12"]
+[ext_resource type="Script" path="res://scripts/managers/_spawner_manager.gd" id="4_ykm6s"]
+[ext_resource type="PackedScene" uid="uid://jybfejqc6g2d" path="res://scenes/boss/boss.tscn" id="6_d7ciy"]
+[ext_resource type="PackedScene" uid="uid://ybjpkn7ejbus" path="res://scenes/rolling_cubes/big_area.tscn" id="6_rdyoh"]
+[ext_resource type="Script" path="res://scripts/beheaviours/_player_shadow_beheaviour.gd" id="7_8gpay"]
+
+[sub_resource type="Environment" id="Environment_t3bbj"]
+background_mode = 3
+ambient_light_color = Color(0.839216, 0.917647, 0.980392, 1)
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.2
+glow_blend_mode = 1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_13e7h"]
+dof_blur_amount = 0.05
+
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MirrorReflexion" type="CanvasLayer" parent="Background"]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background/MirrorReflexion"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(640, 360)
+texture = ExtResource("4")
+
+[node name="Noise" type="CanvasLayer" parent="Background"]
+layer = -2
+
+[node name="TextureRect" type="TextureRect" parent="Background/Noise"]
+texture_repeat = 2
+material = ExtResource("3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3_3p2pp")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t3bbj")
+camera_attributes = SubResource("CameraAttributesPractical_13e7h")
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.649633, 0.760247, 0, -0.760247, 0.649633, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" node_paths=PackedStringArray("extra")]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 17.198)
+v_offset = 1.0
+fov = 61.4
+size = 18.292
+script = ExtResource("4_abh12")
+extra = NodePath("../../Background/MirrorReflexion/TextureRect")
+
+[node name="SpawnerManager" type="Node" parent="."]
+process_mode = 1
+script = ExtResource("4_ykm6s")
+enemy_scenes = Array[PackedScene]([ExtResource("1"), ExtResource("6_rdyoh")])
+
+[node name="Boss" parent="." instance=ExtResource("6_d7ciy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33)
+
+[node name="Test_Pin" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.907, 0, 8.365)
+
+[node name="PlayerShadow" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+collision_mask = 2
+script = ExtResource("7_8gpay")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerShadow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("3")

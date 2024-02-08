@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cl6fbox34rhwm"]
+
+[ext_resource type="Shader" path="res://art/shaders/background_shader.gdshader" id="1"]
+[ext_resource type="Texture2D" uid="uid://ehqc52t6qsie" path="res://art/textures/noise/noise_2.tres" id="2"]
+
+[sub_resource type="Gradient" id="10"]
+offsets = PackedFloat32Array(0, 0.191257, 1)
+colors = PackedColorArray(0.6992, 0.73264, 0.76, 1, 0.6461, 0.662075, 0.71, 1, 0.4, 0.4, 0.4, 1)
+
+[sub_resource type="GradientTexture2D" id="11"]
+gradient = SubResource("10")
+
+[resource]
+shader = ExtResource("1")
+shader_parameter/scroll1 = Vector2(-0.015, -0.005)
+shader_parameter/scroll2 = Vector2(0.02, 0.011)
+shader_parameter/texture2 = ExtResource("2")
+shader_parameter/colorTexture = SubResource("11")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://xb1j4tydxv4t"]
+
+[ext_resource type="Script" path="res://scripts/classes/rolling_cube.gd" id="1"]
+[ext_resource type="Material" uid="uid://b07g8tel3qh28" path="res://art/materials/entities/player.tres" id="2_r03gd"]
+
+[sub_resource type="BoxMesh" id="1"]
+
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u72i0"]
+radius = 0.48
+
+[node name="RollingCube" type="CharacterBody3D"]
+script = ExtResource("1")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Boy" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("1")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_r03gd")
+
+[node name="Hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("3")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_u72i0")
+target_position = Vector3(0, 0, 0)
+collision_mask = 4

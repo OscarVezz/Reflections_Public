@@ -1,0 +1,57 @@
+[gd_scene load_steps=16 format=3 uid="uid://cmpjc1klwhbla"]
+
+[ext_resource type="Script" path="res://scripts/singletons/AudioManager.gd" id="1_cxvpi"]
+[ext_resource type="AudioStream" uid="uid://c4pg50p1hwegp" path="res://audio/sfx/ceramic_2.mp3" id="3_hnj1x"]
+[ext_resource type="AudioStream" uid="uid://dqnhcx8tg7ih3" path="res://audio/sfx/glass_2.mp3" id="3_vqecw"]
+[ext_resource type="AudioStream" uid="uid://ijwo72sk7gwf" path="res://audio/sfx/reverse.wav" id="4_xm4kw"]
+[ext_resource type="AudioStream" uid="uid://bwykmx1rqfxsk" path="res://audio/sfx/glass_1.wav" id="5_jawqs"]
+[ext_resource type="AudioStream" uid="uid://bejdfbp32b6u0" path="res://audio/sfx/explosion_1.mp3" id="6_scx43"]
+[ext_resource type="AudioStream" uid="uid://beciaed1r3bey" path="res://audio/sfx/explosion_3.mp3" id="7_x45sc"]
+[ext_resource type="AudioStream" uid="uid://bpnc6vflo60gu" path="res://audio/sfx/laser_2.mp3" id="8_wf5ef"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wn5ao"]
+playback_mode = 1
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("3_hnj1x")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lxrnd"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("3_vqecw")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3ujuy"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("4_xm4kw")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_71s44"]
+random_pitch = 1.15
+streams_count = 1
+stream_0/stream = ExtResource("5_jawqs")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_revru"]
+random_pitch = 1.15
+streams_count = 1
+stream_0/stream = ExtResource("6_scx43")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tf7t1"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("7_x45sc")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m54mw"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("8_wf5ef")
+stream_0/weight = 1.0
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_cxvpi")
+sfx = Array[AudioStreamRandomizer]([SubResource("AudioStreamRandomizer_wn5ao"), SubResource("AudioStreamRandomizer_lxrnd"), SubResource("AudioStreamRandomizer_3ujuy"), SubResource("AudioStreamRandomizer_71s44"), SubResource("AudioStreamRandomizer_revru"), SubResource("AudioStreamRandomizer_tf7t1"), SubResource("AudioStreamRandomizer_m54mw")])

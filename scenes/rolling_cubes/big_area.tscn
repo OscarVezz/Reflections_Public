@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ybjpkn7ejbus"]
+
+[ext_resource type="Script" path="res://scripts/classes/rolling_area.gd" id="1_mtb1a"]
+[ext_resource type="Material" uid="uid://cj2xb0tn6lu7b" path="res://art/materials/entities/enemy.tres" id="2_dsnbi"]
+
+[sub_resource type="BoxMesh" id="1"]
+
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(0.7, 2, 0.7)
+
+[node name="RollingArea" type="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 2
+script = ExtResource("1_mtb1a")
+cube_size = 2.0
+offset = Vector3(0, 1, 0)
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Boy" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("1")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_dsnbi")
+
+[node name="Hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.00068, 0, 0, 0, 1.00068, 0, 0, 0, 1.00068, 0, 0.5, 0)
+shape = SubResource("3")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+aabb = AABB(-0.55, -0.55, -0.55, 1.1, 1.1, 1.1)
+
+[connection signal="body_entered" from="." to="." method="_on_RollingArea_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_VisibilityNotifier_screen_exited"]

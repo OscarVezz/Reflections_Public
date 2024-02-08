@@ -1,0 +1,87 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://ddo6s065mfd1j"]
+
+[ext_resource type="FontFile" uid="uid://badm7pm81328y" path="res://ui/fonts/Poppins-Regular.ttf" id="1_y70nq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kms3"]
+bg_color = Color(0.219608, 0.219608, 0.219608, 1)
+border_width_bottom = 5
+border_color = Color(0.4, 0.4, 0.4, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asiit"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+border_width_bottom = 5
+border_color = Color(0.45098, 0.45098, 0.45098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7dsi"]
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 5
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qvl0"]
+bg_color = Color(0.709804, 0.709804, 0.709804, 1)
+border_width_bottom = 5
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_x308e"]
+color = Color(0.898039, 0.898039, 0.898039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p61ug"]
+bg_color = Color(0.898039, 0.898039, 0.898039, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ualq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2g6h"]
+bg_color = Color(0.901961, 0.937255, 0.941176, 0.627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1rnr"]
+bg_color = Color(0.0980392, 0.831373, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[resource]
+default_font = ExtResource("1_y70nq")
+default_font_size = 28
+Button/colors/font_color = Color(0.0901961, 0.160784, 0.321569, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_2kms3")
+Button/styles/hover = SubResource("StyleBoxFlat_asiit")
+Button/styles/normal = SubResource("StyleBoxFlat_w7dsi")
+Button/styles/pressed = SubResource("StyleBoxFlat_asiit")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_5qvl0")
+HSeparator/styles/separator = SubResource("StyleBoxLine_x308e")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_p61ug")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_6ualq")
+Label/colors/font_color = Color(0.0470588, 0.0862745, 0.168627, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_q2g6h")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_k1rnr")

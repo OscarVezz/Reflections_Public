@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://art/materials/entities/player.tres" id="1"]
+
+[sub_resource type="BoxMesh" id=32]
+size = Vector3( 1, 1, 1 )
+
+[node name="Clone1" type="Marker3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Boy" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+mesh = SubResource( 32 )
+skeleton = NodePath("")
+material/0 = ExtResource( 1 )
